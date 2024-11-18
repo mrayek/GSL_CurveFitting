@@ -1,0 +1,4 @@
+#ifndef CURVE_FITTING_SOLVER_HPP
+#define CURVE_FITTING_SOLVER_HPP
+
+#endif
