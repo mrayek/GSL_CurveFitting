@@ -7,10 +7,20 @@ CurveFittingSolver::CurveFittingSolver(
     double gTol
 ) : solverType(T), maxIter(maxIter), xTol(xTol), gTol(gTol) { }
 
+CurveFittingSolver::CurveFittingSolver(CurveFittingSolver&) = delete;
+
+CurveFittingSolver::CurveFittingSolver(CurveFittingSolver&&) noexcept = delete;
+
 CurveFittingSolver::~CurveFittingSolver()
 {
     if (solver) { gsl_multifit_fdfsolver_free(solver); }
 }
+
+CurveFittingSolver&
+CurveFittingSolver::operator=(CurveFittingSolver&) = delete;
+
+CurveFittingSolver&
+CurveFittingSolver::operator=(CurveFittingSolver&&) noexcept = delete;
 
 void
 CurveFittingSolver::initialize(const_span x, const_span y, const_span w,

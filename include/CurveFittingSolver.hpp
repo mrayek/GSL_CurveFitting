@@ -23,7 +23,15 @@ class CurveFittingSolver
             double gTol = 1e-08
         );
 
+        CurveFittingSolver(CurveFittingSolver&);
+
+        CurveFittingSolver(CurveFittingSolver&&) noexcept;
+
         ~CurveFittingSolver();
+
+        CurveFittingSolver& operator=(CurveFittingSolver&);
+
+        CurveFittingSolver& operator=(CurveFittingSolver&&) noexcept;
 
         void
         initialize(const_span x, const_span y, const_span w, FittingCurve& fc);
